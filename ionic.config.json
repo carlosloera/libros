@@ -1,0 +1,8 @@
+{
+  "name": "libros",
+  "app_id": "bb0d0b05",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
