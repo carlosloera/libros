@@ -7,8 +7,21 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+    <ion-item>
+        <ion-label floating>Nombre del libro</ion-label>
+        <ion-input type="text" name="nombre" [(ngModel)]="nombre"></ion-input>
+    </ion-item>
+    <button ion-button item-end (click)="obtener(nombre)">Buscar</button>
+
+  <ion-list>
+    <ion-item *ngFor="let book of libros">
+      <ion-thumbnail item-start  >
+        <img [src]=" IMGS + book.cover_i +'-S.jpg' ">
+      </ion-thumbnail>
+      <h2>{{ book.title_suggest }}</h2>
+      <p>{{ book.author_name }}</p>
+      <button ion-button clear item-end (click)="cambiarPagina(book)">Ver</button>
+    </ion-item>
+  </ion-list>
 </ion-content>
